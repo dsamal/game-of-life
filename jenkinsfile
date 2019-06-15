@@ -6,7 +6,6 @@ pipeline{
     stages{
         stage('Sync the build from Git'){
             steps{
-                sh 'rm -rf *'
                 sh 'mv game-of-life/* .'
                 sh 'rm -rf game-of-life'
             }
