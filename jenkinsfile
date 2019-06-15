@@ -4,10 +4,9 @@ pipeline{
     skipStagesAfterUnstable()
     }
     stages{
-        stage('Sync the build from Git'){
+        stage('Clean up workspace){
             steps{
-                sh 'mv game-of-life/* .'
-                sh 'rm -rf game-of-life'
+		sh 'rm -rf *'
             }
         }
         stage('Clean UP'){
