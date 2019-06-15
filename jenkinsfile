@@ -9,7 +9,7 @@ pipeline{
 		sh 'rm -rf *'
             }
         }
-        stage('Clean UP'){
+        stage('Clean up the project'){
             steps{
                 sh '/Users/Shared/Jenkins/Home/tools/hudson.tasks.Maven_MavenInstallation/Default/bin/mvn clean package'
             }
