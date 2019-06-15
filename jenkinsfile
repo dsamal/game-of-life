@@ -1,0 +1,25 @@
+pipeline{
+    agent any
+    options {
+    skipStagesAfterUnstable()
+    }
+    stages{
+        stage('Sync the build from Git'){
+            steps{
+                sh 'rm -rf *'
+                sh 'mv game-of-life/* .'
+                sh 'rm -rf game-of-life'
+            }
+        }
+        stage('Clean UP'){
+            steps{
+                sh '/Users/Shared/Jenkins/Home/tools/hudson.tasks.Maven_MavenInstallation/Default/bin/mvn clean package'
+            }
+        }
+        stage('Build the Target'){
+            steps{
+                sh '/Users/Shared/Jenkins/Home/tools/hudson.tasks.Maven_MavenInstallation/Default/bin/mvn clean install'
+            }
+        }
+    }
+}
