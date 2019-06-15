@@ -4,11 +4,6 @@ pipeline{
     skipStagesAfterUnstable()
     }
     stages{
-        stage('Clean up workspace'){
-            steps{
-		sh 'rm -rf *'
-            }
-        }
         stage('Clean up the project'){
             steps{
                 sh '/Users/Shared/Jenkins/Home/tools/hudson.tasks.Maven_MavenInstallation/Default/bin/mvn clean package'
