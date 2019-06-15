@@ -4,7 +4,7 @@ pipeline{
     skipStagesAfterUnstable()
     }
     stages{
-        stage('Clean up workspace){
+        stage('Clean up workspace'){
             steps{
 		sh 'rm -rf *'
             }
